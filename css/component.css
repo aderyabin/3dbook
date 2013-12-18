@@ -226,17 +226,14 @@
   transform: rotate(90deg) translateY(-40px);
 }
 
-/* Individual style & artwork */
-
-/* Book 1 */
-.book-1 .bk-front > div,
-.book-1 .bk-back,
-.book-1 .bk-left,
-.book-1 .bk-front:after {
+.bk-book .bk-front > div,
+.bk-book .bk-back,
+.bk-book .bk-left,
+.bk-book .bk-front:after {
   background-color: #fea855;
 }
 
-.book-1 .bk-left h2 {
+.bk-book .bk-left h2 {
   color: #fff;
   font-size: 15px;
   line-height: 40px;
@@ -244,10 +241,26 @@
   text-align: right;
 }
 
-.book-1 .bk-back p {
+.bk-book .bk-back p {
   color: #fff;
   font-size: 13px;
   padding: 40px;
   text-align: center;
   font-weight: 700;
+}
+
+/* Fallbacks */
+
+.no-csstransforms3d .bk-list li .bk-book > div,
+.no-csstransforms3d .bk-list li .bk-book .bk-cover-back {
+  display: none;
+}
+
+.no-csstransforms3d .bk-list li .bk-book > div.bk-front {
+  display: block;
+}
+
+.no-csstransforms3d .bk-info button,
+.no-js .bk-info button {
+  display: none;
 }
